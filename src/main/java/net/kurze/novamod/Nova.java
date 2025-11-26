@@ -41,8 +41,10 @@ public class Nova {
     public static final String MODID = "kurzenova";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
+    // The constructor for the mod class is the first code that is run when your mod
+    // is loaded.
+    // FML will recognize some parameter types like IEventBus or ModContainer and
+    // pass them in automatically.
 
     public Nova(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
@@ -53,7 +55,8 @@ public class Nova {
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
+        // Register our mod's ModConfigSpec so that FML can create and load the config
+        // file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
@@ -73,7 +76,8 @@ public class Nova {
         LOGGER.info("HELLO from server starting");
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    // You can use EventBusSubscriber to automatically register all static methods
+    // in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = Nova.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     static class ClientModEvents {
         @SubscribeEvent
